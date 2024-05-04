@@ -1,0 +1,30 @@
+{
+    "folders": [
+        {
+            "path": "..\/current"
+        },
+        {
+            "name": "current's vendor",
+            "path": "..\/current\/vendor"
+        }
+    ],
+    "settings": {
+        "better-phpunit.suiteSuffix": "--env=testing",
+        "better-phpunit.phpunitBinary": "export IS_DEVELOPING=1; export XDEBUG_SESSION=$USER; cd -P ~\/code-server\/projects\/filament-issue\/current; .\/vendor\/bin\/phpunit",
+        "better-phpunit.commandSuffix": "--stop-on-failure",
+        "terminal.integrated.cwd": "${workspaceFolder:current}",
+        "explorer.excludeGitIgnore": true,
+        "php.problems.scope": "all",
+        "php.workspace.includePath": "vendor",
+        "files.exclude": {
+            "**\/node_modules": true,
+            "**\/.git": true,
+            "vendor": true,
+            "inherit": true
+        },
+        "search.exclude": {
+            "vendor\/..\/current": true,
+            "vendor\/current\/vendor": true
+        }
+    }
+}
