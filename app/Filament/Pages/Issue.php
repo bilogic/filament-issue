@@ -90,6 +90,7 @@ class Issue extends Page implements HasForms // @TASK 1a
         $this->primaryForm->fill();                 // empty the form
 
         Notification::make()
+            ->duration(1000)
             ->success()
             ->title(__('filament-panels::pages/auth/edit-profile.notifications.saved.title'))
             ->send();
