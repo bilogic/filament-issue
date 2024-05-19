@@ -8,6 +8,7 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Database\Eloquent\Model;
 
@@ -87,6 +88,12 @@ class Issue extends Page implements HasForms // @TASK 1a
         $formData = $this->primaryForm->getState(); // @TASK 5
         // save $formData
         $this->primaryForm->fill();                 // empty the form
+
+        Notification::make()
+            ->success()
+            ->title(__('filament-panels::pages/auth/edit-profile.notifications.saved.title'))
+            ->send();
+
     }
 
     public function primaryFormSave(): Model|array|null
